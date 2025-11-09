@@ -152,7 +152,7 @@ fi
 chmod 755 tuic-server
 
 # Create self-signed certs
-openssl req -x509 -nodes -newkey ec:<(openssl ecparam -name prime256v1) -keyout /root/tuic/server.key -out /root/tuic/server.crt -subj "/CN=10086.cn" -days 36500
+openssl req -x509 -nodes -newkey ec:<(openssl ecparam -name prime256v1) -keyout /root/tuic/server.key -out /root/tuic/server.crt -subj "/CN=touch.10086.cn" -days 36500
 
 # Prompt user for port and password
 echo ""
