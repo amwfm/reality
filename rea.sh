@@ -102,7 +102,7 @@ reconfig() {
                     "dest": "1.1.1.1:443",
                     "xver": 0,
                     "serverNames": [
-                        "video.10010.com.cloud.wo.cn"
+                        "v6kuanshijievideo.chinaunicomvideo.cn"
                     ],
                     "privateKey": "$rePrivateKey",
                     "minClientVer": "",
@@ -137,7 +137,7 @@ EOF
     # 删除运行脚本
     rm -f tcp-wss.sh install-release.sh reality.sh 
     IP=$(getIP)
-    url="vless://${UUID}@${IP}:${PORT}?encryption=none&flow=xtls-rprx-vision&security=reality&sni=video.10010.com.cloud.wo.cn&fp=chrome&pbk=${rePublicKey}&sid=${shortId}&type=tcp&headerType=none#$ISP"
+    url="vless://${UUID}@${IP}:${PORT}?encryption=none&flow=xtls-rprx-vision&security=reality&sni=v6kuanshijievideo.chinaunicomvideo.cn&fp=chrome&pbk=${rePublicKey}&sid=${shortId}&type=tcp&headerType=none#$ISP"
 
     echo ""
     echo -e "\e[1;32mreality 安装成功\033[0m"
