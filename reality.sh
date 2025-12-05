@@ -102,7 +102,7 @@ reconfig() {
                     "dest": "1.1.1.1:443",
                     "xver": 0,
                     "serverNames": [
-                        "ml-downupdate.sjy.tcdnos.com"
+                        "uni-ahwh-mce-01-002.wo186.tv"
                     ],
                     "privateKey": "$rePrivateKey",
                     "minClientVer": "",
@@ -137,7 +137,7 @@ EOF
     # 删除运行脚本
     rm -f tcp-wss.sh install-release.sh reality.sh 
     IP=$(getIP)
-    url="vless://${UUID}@${IP}:${PORT}?encryption=none&flow=xtls-rprx-vision&security=reality&sni=ml-downupdate.sjy.tcdnos.com&fp=chrome&pbk=${rePublicKey}&sid=${shortId}&type=tcp&headerType=none#$ISP"
+    url="vless://${UUID}@${IP}:${PORT}?encryption=none&flow=xtls-rprx-vision&security=reality&sni=uni-ahwh-mce-01-002.wo186.tv&fp=chrome&pbk=${rePublicKey}&sid=${shortId}&type=tcp&headerType=none#$ISP"
 
     echo ""
     echo -e "\e[1;32mreality 安装成功\033[0m"
