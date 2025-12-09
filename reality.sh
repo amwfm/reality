@@ -1,7 +1,7 @@
 #!/bin/bash
 export PORT=${PORT:-'8880'}
 export UUID=${UUID:-$(cat /proc/sys/kernel/random/uuid)}
-
+export serverNames=${serverNames:-$}
 # 检查是否为root下运行
 [[ $EUID -ne 0 ]] && echo -e '\033[1;35m请在root用户下运行脚本\033[0m' && sleep 1 && exit 1
 
@@ -102,7 +102,7 @@ reconfig() {
                     "dest": "1.1.1.1:443",
                     "xver": 0,
                     "serverNames": [
-                        "poster.chinaunicomvideo.cn"
+                        "$serverNames"
                     ],
                     "privateKey": "$rePrivateKey",
                     "minClientVer": "",
@@ -137,7 +137,7 @@ EOF
     # 删除运行脚本
     rm -f tcp-wss.sh install-release.sh reality.sh 
     IP=$(getIP)
-    url="vless://${UUID}@${IP}:${PORT}?encryption=none&flow=xtls-rprx-vision&security=reality&sni=poster.chinaunicomvideo.cn&fp=chrome&pbk=${rePublicKey}&sid=${shortId}&type=tcp&headerType=none#$ISP"
+    url="vless://${UUID}@${SNI}@${IP}:${PORT}?encryption=none&flow=xtls-rprx-vision&security=reality&fp=chrome&pbk=${rePublicKey}&sid=${shortId}&type=tcp&headerType=none#$ISP"
 
     echo ""
     echo -e "\e[1;32mreality 安装成功\033[0m"
