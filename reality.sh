@@ -1,7 +1,7 @@
 #!/bin/bash
 export PORT=${PORT:-'8880'}
 export UUID=${UUID:-$(cat /proc/sys/kernel/random/uuid)}
-export serverNames=${serverNames:-$}
+export SNI=${SNI:-$}
 
 # 检查是否为root下运行
 [[ $EUID -ne 0 ]] && echo -e '\033[1;35m请在root用户下运行脚本\033[0m' && sleep 1 && exit 1
@@ -102,8 +102,8 @@ reconfig() {
                     "show": false,
                     "dest": "1.1.1.1:443",
                     "xver": 0,
-                    "serverNames": [
-                        "$serverNames"
+                    "SNI": [
+                        "$SNI"
                     ],
                     "privateKey": "$rePrivateKey",
                     "minClientVer": "",
